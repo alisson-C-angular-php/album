@@ -1,4 +1,4 @@
-import { Component, Input, inputBinding, OnInit, signal } from '@angular/core';
+import { Component,EventEmitter, Input, inputBinding, OnInit, Output, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -11,7 +11,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './input.component.scss'
 })
 export class InputComponent  {
-   @Input() label : string = "";
+   @Input() label: string = "";
+   @Output() image:EventEmitter<string> = new EventEmitter<string>();
+   algo:string = "";
 
+  setImage(event:any){
+    this.algo = event;
+  }
+
+  disparaEvento(){
+    this.image.emit(this.algo);
+  }
 }
 

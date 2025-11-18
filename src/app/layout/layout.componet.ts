@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputComponent } from '../core/components/input/input.component';
 import { CardComponent } from '../core/components/card/card.component';
@@ -14,6 +14,11 @@ import { CardComponent } from '../core/components/card/card.component';
 })
 export class LayoutComponent  {
   var = 'alison';
+  @Input() image:any = "";
+  onImageReceived(event:any){
+    this.image = event.data;
+    console.log('Evento recebido:', this.image); 
+  }
 
 }
 

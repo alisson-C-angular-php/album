@@ -1,4 +1,5 @@
-<div class="form-group">
+<div class="form-group setImage">
   <label>{{label}}</label>
-  <input type="text" class="form-control" >
+  <input type="text" class="form-control" (input)="setImage($event)">
+  <button class="btn btn-primary" (click)="disparaEvento()"></button>
 </div>

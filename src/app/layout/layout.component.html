@@ -1,5 +1,6 @@
-<app-input [label]="'teste'"></app-input>
+<app-input [label]="'teste'"   (image)="onImageReceived($event)">
+></app-input>
 <div class="align-text-center">
-  <app-card></app-card>
+  <app-card [image]="image"></app-card>
 </div>
 
